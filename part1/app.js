@@ -46,6 +46,9 @@ app.get('/api/dogs', async (req, res, next) => {
     FROM Dogs
     JOIN Users on Users.user_id = Dogs.owner_id
     `);
+  if (rows.length > 0) {
+    res.json()
+  }
 });
 
 module.exports = app;
