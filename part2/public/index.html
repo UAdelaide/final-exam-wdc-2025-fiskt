@@ -61,7 +61,8 @@
             const res = await fetch('/login-user', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ user_id: uid, username: username, role: role })
+              body: JSON.stringify({ user_id: uid, username: username, role: role }),
+              credentials
             })
           } catch(err) {
             console.error(err);
@@ -76,6 +77,7 @@
               body: JSON.stringify({ username: loginForm.username, password: loginForm.password })
             });
             const data = await res.json();
+            sessionLogin
           }
         }
 
