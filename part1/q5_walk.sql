@@ -28,8 +28,8 @@ VALUES (
 INSERT INTO WalkRequests (dog_id, request_time, duration, location, status)
 VALUES (
     (SELECT dog_id FROM Dogs WHERE name = "James"),
-    "2025-06-10 15:30:00",
-    45,
+    "2025-06-03 15:00:00",
+    35,
     "Beachside Ave",
     "accepted"
 );
