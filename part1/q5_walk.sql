@@ -34,7 +34,7 @@ VALUES (
     "completed"
 );
 
-INSERT INTO WalkRequests (dog_id, request_time, duration, location, status)
+INSERT INTO WalkRequests (dog_id, requested_time, duration, location, status)
 VALUES (
     (SELECT dog_id FROM Dogs WHERE name = "Snoopy"),
     "2025-06-16 03:55:00",
