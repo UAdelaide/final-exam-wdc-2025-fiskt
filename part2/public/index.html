@@ -77,7 +77,10 @@
               body: JSON.stringify({ username: loginForm.username, password: loginForm.password })
             });
             const data = await res.json();
-            sessionLogin(data.user_id, )
+            sessionLogin(data.user_id, data.username, data.role);
+            if (res.ok) {
+              
+            }
           }
         }
 
