@@ -42,7 +42,7 @@ let db;
       database: 'DogWalkService'
     });
 
-    await db.execute('SOURCE dogwalks.sql');
+    const 
 
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count === 0) {
