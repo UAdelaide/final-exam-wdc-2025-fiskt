@@ -94,6 +94,4 @@ app.get('/api/walkers/summary', async (req, res, next) => {
   }
 });
 
-app.get()
-
 module.exports = app;
