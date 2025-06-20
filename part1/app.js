@@ -42,14 +42,14 @@ let db;
       database: 'DogWalkService'
     });
 
-    const sql = await fs.readFile(path.join(_dirname, 'dogwalks.sql'), 'utf-8');
+    const sql = await fs.readFile(path.join(__dirname, 'dogwalks.sql'), 'utf-8');
     await db.query(sql);
 
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count === 0) {
-      await db.query(await fs.readfile(path.join(_dirname, 'q5_users.sql'), 'utf-8'));
-      await db.query(await fs.readfile(path.join(_dirname, 'q5_dogs.sql'), 'utf-8'));
-      await db.query(await fs.readfile(path.join(_dirname, 'q5_walk.sql'), 'utf-8'));
+      await db.query(await fs.readFile(path.join(__dirname, 'q5_users.sql'), 'utf-8'));
+      await db.query(await fs.readFile(path.join(__dirname, 'q5_dogs.sql'), 'utf-8'));
+      await db.query(await fs.readFile(path.join(__dirname, 'q5_walk.sql'), 'utf-8'));
     }
   } catch(err) {
     console.error('Error in setting up database');
