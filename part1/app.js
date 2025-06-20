@@ -43,7 +43,7 @@ app.use(function(err, req, res, next) {
 app.get('/api/dogs', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT Dogs.name, Dogs.size, Users.username
+      SELECT Dogs.name as "dog_name", Dogs.size, Users.username
       FROM Dogs
       JOIN Users on Users.user_id = Dogs.owner_id
       `);
@@ -60,7 +60,7 @@ app.get('/api/dogs', async (req, res, next) => {
 app.get('/api/walkrequests/open', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT WalkRequests.request_id, Dog.name, 
+      SELECT WalkRequests.request_id, Dog.name,
       `);
   } catch(err) {
     res.status(500).json({ message: "request error" });
