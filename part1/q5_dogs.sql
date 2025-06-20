@@ -1,5 +1,4 @@
-SELECT user_id FROM Users
-JOIN Users 
+SELECT user_id FROM Users WHERE username = "alice123"
 
 
 INSERT INTO Dogs ()
