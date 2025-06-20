@@ -49,8 +49,10 @@ app.get('/api/dogs', async (req, res, next) => {
   if (rows.length > 0) {
     res.status(200).json(rows);
   } else {
-    res.status(500).json({ message: " "})
+    res.status(500).json({ message: "Error getting dogs" });
   }
 });
+
+app.get()
 
 module.exports = app;
