@@ -42,7 +42,8 @@ let db;
       database: 'DogWalkService'
     });
 
-    const sql = await fs.readFile(path.join(_dirname, 'dogwalks.sql'))
+    const sql = await fs.readFile(path.join(_dirname, 'dogwalks.sql'), 'utf-8');
+    await db.query(sql);
 
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count === 0) {
