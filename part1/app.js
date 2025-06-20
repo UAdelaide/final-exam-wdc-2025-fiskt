@@ -49,7 +49,7 @@ let db;
     if (rows[0].count === 0) {
       await db.query(await fs.readfile(path.join(_dirname, 'q5_users.sql'), 'utf-8'));
       await db.query(await fs.readfile(path.join(_dirname, 'q5_dogs.sql'), 'utf-8'));
-      await
+      await db.query(await fs.readfile(path.join(_dirname, 'q5_walk.sql'), 'utf-8'));
     }
   } catch(err) {
     console.error('Error in setting up database');
