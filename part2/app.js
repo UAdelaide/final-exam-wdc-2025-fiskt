@@ -12,7 +12,9 @@ app.post('/login-user', (req, res) => {
         session_uid: user_id,
         session_username: username,
         session_role: role
-    }
+    };
+
+    if ()
 });
 
 // Middleware
