@@ -36,7 +36,9 @@ let db;
 
     db = await mysql.createConnection({
       host: 'localhost',
-      user
+      user: 'root',
+      password: '',
+      database: 
     })
   }
 })
