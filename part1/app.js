@@ -43,7 +43,7 @@ let db;
 
     await db.execute('SOURCE dogwalks.sql');
 
-    
+    const [rows] = await db.execute('SELECT COUNT(*)')
   }
 })
 
