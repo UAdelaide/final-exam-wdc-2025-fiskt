@@ -42,7 +42,7 @@ app.use(function(err, req, res, next) {
 
 app.get('/api/dogs', async (req, res, next) => {
   const [rows] = await db.query(
-    'SELECT name, size, (SELECT username WHERE '
+    'SELECT name, size, users.username'
   );
 });
 
