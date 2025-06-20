@@ -43,7 +43,8 @@ let db;
 
     await db.execute('SOURCE dogwalks.sql');
 
-    const [rows] = await db.execute('SELECT COUNT(*)')
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+    if (rows[0].count)
   }
 })
 
