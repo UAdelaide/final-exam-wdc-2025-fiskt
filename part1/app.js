@@ -52,7 +52,7 @@ let db;
       await db.query(await fs.readFile(path.join(__dirname, 'q5_walk.sql'), 'utf-8'));
     }
   } catch(err) {
-    console.error('Error in setting up database');
+    console.error(err);
   }
 })();
 
