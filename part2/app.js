@@ -14,7 +14,11 @@ app.post('/login-user', (req, res) => {
         session_role: role
     };
 
-    if ()
+    if (req.session.user) {
+        res.status(200);
+    } else {
+        res.status(500);
+    }
 });
 
 // Middleware
