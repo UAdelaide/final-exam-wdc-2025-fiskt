@@ -22,7 +22,7 @@ VALUES (
     "2025-07-2 05:25:00",
     50,
     "Parklands",
-    "accepted"
+    "open"
 );
 
 INSERT INTO WalkRequests (dog_id, request_time, duration, location, status)
@@ -31,7 +31,7 @@ VALUES (
     "2025-06-03 15:00:00",
     35,
     "Beachside Ave",
-    "accepted"
+    "completed"
 );
 
 INSERT INTO WalkRequests (dog_id, request_time, duration, location, status)
@@ -40,5 +40,5 @@ VALUES (
     "2025-06-10 09:30:00",
     45,
     "Beachside Ave",
-    "accepted"
+    "cancelled"
 );
