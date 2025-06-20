@@ -41,7 +41,7 @@ let db;
       database: 'DogWalkService'
     });
 
-    await db.e
+    await db.execute
   }
 })
 
