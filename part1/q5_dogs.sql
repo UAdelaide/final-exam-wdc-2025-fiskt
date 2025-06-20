@@ -1,4 +1,5 @@
-SELECT user_id FROM 
+SELECT user_id FROM Users
+JOIN Users 
 
 
 INSERT INTO Dogs ()
