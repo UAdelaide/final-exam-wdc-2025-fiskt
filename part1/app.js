@@ -59,7 +59,9 @@ app.get('/api/dogs', async (req, res, next) => {
 
 app.get('/api/walkrequests/open', async (req, res, next) => {
   try {
-    
+    const [rows] = await db.query(`
+      
+      `);
   } catch(err) {
     res.status(500).json({ message: "request error" });
   }
