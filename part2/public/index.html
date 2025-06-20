@@ -58,7 +58,10 @@
 
         async function sessionLogin() {
           try {
-            const res = await fetch('/')
+            const res = await fetch('/login-user', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+            })
           }
         }
 
