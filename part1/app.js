@@ -31,7 +31,7 @@ let db;
       password: ''
     });
 
-    await connection.query('CREATE DATABASE DogWalkService;');
+    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService;');
     await connection.end();
 
     db = await mysql.createConnection({
@@ -41,7 +41,7 @@ let db;
       database: 'DogWalkService'
     });
 
-    await db.execute('SOURCE dogwalks.sql')
+    await db.execute('SOURCE dogwalks.sql');
   }
 })
 
