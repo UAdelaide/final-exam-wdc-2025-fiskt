@@ -48,7 +48,8 @@ let db;
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count === 0) {
       await db.query(await fs.readfile(path.join(_dirname, 'q5_users.sql'), 'utf-8'));
-      await db.query(await fs.readfile(path.join(_dirname, '')))
+      await db.query(await fs.readfile(path.join(_dirname, 'q5_dogs.sql'), 'utf-8'));
+      await
     }
   } catch(err) {
     console.error('Error in setting up database');
