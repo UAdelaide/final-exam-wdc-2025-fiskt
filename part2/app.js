@@ -9,7 +9,7 @@ const app = express();
 app.post('/login-user', (req, res) => {
     const { user_id, username, role } = req.body;
     req.session.user = {
-        
+        session_uid: user_id;
     }
 });
 
