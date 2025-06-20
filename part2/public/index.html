@@ -13,7 +13,7 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
 
     <!-- Form for user login -->
-    <form>
+    <form @submit.prevent="login">
       <div class="mb-3">
         <label class="form-label">Username</label>
         <input type="text" name="username" v-model="loginForm.username" class="form-control" required>
