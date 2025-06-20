@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var mysql = require('mysql2/promise');
-var fs = require('fs/promises');
+var db = require('')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,39 +22,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-let db;
-
-(async () => {
-  try {
-    const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: ''
-    });
-
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService;');
-    await connection.end();
-
-    db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'DogWalkService'
-    });
-
-    const sql = await fs.readFile(path.join(__dirname, 'dogwalks.sql'), 'utf-8');
-    await db.query(sql);
-
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-    if (rows[0].count === 0) {
-      await db.query(await fs.readFile(path.join(__dirname, 'q5_users.sql'), 'utf-8'));
-      await db.query(await fs.readFile(path.join(__dirname, 'q5_dogs.sql'), 'utf-8'));
-      await db.query(await fs.readFile(path.join(__dirname, 'q5_walk.sql'), 'utf-8'));
-    }
-  } catch(err) {
-    console.error(err);
-  }
-})();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
