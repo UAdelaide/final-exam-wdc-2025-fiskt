@@ -46,7 +46,8 @@ let db;
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count === 0) {
       await db.execute('SOURCE q5_users.sql');
-      await db
+      await db.execute('SOURCE q5_dogs.sql');
+      await db.execute()
     }
   }
 })
