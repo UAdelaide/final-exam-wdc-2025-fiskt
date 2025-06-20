@@ -41,20 +41,24 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('/api/dogs', async (req, res, next) => {
-  const [rows] = await db.query(`
-    SELECT Dogs.name, Dogs.size, Users.username
-    FROM Dogs
-    JOIN Users on Users.user_id = Dogs.owner_id
-    `);
-  if (rows.length > 0) {
-    res.status(200).json(rows);
-  } else {
-    res.status(500).json({ message: "Error getting dogs" });
+  try {
+    const [rows] = await db.query(`
+      SELECT Dogs.name, Dogs.size, Users.username
+      FROM Dogs
+      JOIN Users on Users.user_id = Dogs.owner_id
+      `);
+    if (rows.length > 0) {
+      res.status(200).json(rows);
+    } else {
+      res.status(500).json({ message: "Error getting dogs" });
+    }
+  } catch(err) {
+    r
   }
 });
 
 app.get('/api/walkrequests/open', async (req, res, next) => {
-  
+
 });
 
 app.get()
