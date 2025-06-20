@@ -79,7 +79,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
 app.get('/api/walkers/summary', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT Users.username as "walker_username", COUNT(WalkRatings.rating) as "total_ratings", AVG()
+      SELECT Users.username as "walker_username", COUNT(WalkRatings.rating) as "total_ratings", AVG(WalkRatings.rating) as "average_rating", COUNT()
       `);
   } catch(err) {
     res.status(500).json({ message: "request error" });
