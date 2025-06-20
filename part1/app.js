@@ -47,9 +47,7 @@ let db;
 
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count === 0) {
-      await db.execute('SOURCE q5_users.sql');
-      await db.execute('SOURCE q5_dogs.sql');
-      await db.execute('SOURCE q5_walks.sql');
+      await db.query(await )
     }
   } catch(err) {
     console.error('Error in setting up database');
