@@ -56,7 +56,7 @@
           password: ''
         });
 
-        async function sessionLogin() {
+        async function sessionLogin(uid, username, ) {
           try {
             const res = await fetch('/login-user', {
               method: 'POST',
