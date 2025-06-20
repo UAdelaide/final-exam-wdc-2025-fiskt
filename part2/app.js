@@ -6,6 +6,13 @@ const session = require('express-session');
 
 const app = express();
 
+app.use(session({
+  secret: "session secret",
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+
 app.post('/login-user', (req, res) => {
     const { user_id, username, role } = req.body;
     req.session.user = {
