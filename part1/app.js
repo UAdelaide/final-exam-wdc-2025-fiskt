@@ -30,6 +30,8 @@ let db;
       user: 'root',
       password: ''
     });
+
+    await connection.query('SOURCE dogwalks.sql');
   }
 })
 
