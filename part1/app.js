@@ -41,7 +41,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('/api/dogs', async (req, res, next) => {
-  
+  const [rows] = await db.query('SELECT ');
 });
 
 module.exports = app;
