@@ -60,7 +60,8 @@ app.get('/api/dogs', async (req, res, next) => {
 app.get('/api/walkrequests/open', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT WalkRequests.request_id, Dog.name as "dog_name", WalkRequests.requested_time, WalkRequests
+      SELECT WR.request_id, Dog.name as "dog_name", WR.requested_time, WR.duration
+      FROM WalkRequests as WR
       `);
   } catch(err) {
     res.status(500).json({ message: "request error" });
