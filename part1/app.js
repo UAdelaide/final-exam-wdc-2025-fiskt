@@ -53,6 +53,8 @@ app.get('/api/dogs', async (req, res, next) => {
   }
 });
 
+app.get('/api/walk')
+
 app.get()
 
 module.exports = app;
