@@ -1,1 +1,1 @@
-INSERT INTO 
+INSERT INTO WalkRequests (dog_id, request_time, duration, )
