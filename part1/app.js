@@ -23,7 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let db;
 
-(async)
+(async () => {
+  try {
+    const connection
+  }
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
