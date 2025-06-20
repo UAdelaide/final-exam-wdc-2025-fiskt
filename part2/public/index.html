@@ -63,6 +63,8 @@
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ user_id: uid, username: username, role: role })
             })
+          } catch(err) {
+            
           }
         }
 
