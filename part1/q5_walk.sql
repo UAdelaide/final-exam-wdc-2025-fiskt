@@ -21,7 +21,7 @@ VALUES (
     (SELECT dog_id FROM Dogs WHERE name = "Min"),
     "2025-07-2 05:25:00",
     50,
-    "Beachside Ave",
+    "B",
     "accepted"
 );
 
