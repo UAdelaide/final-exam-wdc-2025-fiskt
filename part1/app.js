@@ -63,7 +63,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
       SELECT WR.request_id, Dogs.name as "dog_name", WR.requested_time, WR.duration_minutes, WR.location, Users.username
       FROM WalkRequests as WR
       JOIN Dogs on Dogs.dog_id = WR.dog_id
-      JOIN Users on Users.user_id = Dogs.dog_id
+      JOIN Users on Users.user_id = Dogs.owner_id
       WHERE WR.status = "open"
       `);
     if (rows.length > 0) {
@@ -79,7 +79,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
 app.get('/api/walkers/summary', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT Users.username as "walker_username", WalkRatings as "total_ratings", 
+      SELECT Users.username as "walker_username", WalkRatings as "total_ratings",
       `);
   } catch(err) {
     res.status(500).json({ message: "request error" });
