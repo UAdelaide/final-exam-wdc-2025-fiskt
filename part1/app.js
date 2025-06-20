@@ -32,6 +32,9 @@ let db;
     });
 
     await connection.query('SOURCE dogwalks.sql');
+    await connection.end();
+
+    
   }
 })
 
