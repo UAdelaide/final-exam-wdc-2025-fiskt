@@ -1,2 +1,2 @@
 INSERT INTO Users (username, email, password_hash, role) VALUES ("alice123", "alice@example.com", "hasehd123", "owner");
-INSERT INTO Users (username, email, password_hash, role) VALUES ("bobwalker")
+INSERT INTO Users (username, email, password_hash, role) VALUES ("bobwalker", "bob@example.com", "hashed456")
