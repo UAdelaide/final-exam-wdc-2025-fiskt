@@ -80,7 +80,8 @@ app.get('/api/walkers/summary', async (req, res, next) => {
   try {
 
   } catch(err) {
-    
+    res.status(500).json({ message: "request error"
+})
   }
 });
 
