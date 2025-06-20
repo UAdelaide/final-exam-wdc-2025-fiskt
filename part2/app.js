@@ -7,7 +7,8 @@ const session = require('express-session');
 const app = express();
 
 app.post('/login-user', (req, res) => {
-    
+    const { user_id, }
+    req.session.user = {}
 });
 
 // Middleware
