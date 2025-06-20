@@ -53,12 +53,12 @@ app.get('/api/dogs', async (req, res, next) => {
       res.status(500).json({ message: "Error getting dogs" });
     }
   } catch(err) {
-    r
+    res.status(500).json({ message: "Request error" });
   }
 });
 
 app.get('/api/walkrequests/open', async (req, res, next) => {
-
+  
 });
 
 app.get()
