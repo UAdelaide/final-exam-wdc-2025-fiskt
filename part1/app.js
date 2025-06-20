@@ -40,6 +40,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.get('/api/')
+app.get('/api/dogs', async (req, res))
 
 module.exports = app;
