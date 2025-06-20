@@ -84,6 +84,7 @@ app.get('/api/walkers/summary', async (req, res, next) => {
       JOIN Users on Users.user_id = WRs.walker_id
       GROUP BY Users.user_id
       `);
+    if (rows.)
   } catch(err) {
     res.status(500).json({ message: "request error" });
   }
