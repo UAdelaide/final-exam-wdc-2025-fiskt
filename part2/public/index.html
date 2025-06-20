@@ -79,7 +79,7 @@
             const data = await res.json();
             sessionLogin(data.user_id, data.username, data.role);
             if (res.ok) {
-              window.href = 'owner-dashboard.html';
+              window.location.href = 'owner-dashboard.html';
             }
           } catch(err) {
             console.error(err);
