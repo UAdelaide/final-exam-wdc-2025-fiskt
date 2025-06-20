@@ -47,10 +47,10 @@ let db;
     if (rows[0].count === 0) {
       await db.execute('SOURCE q5_users.sql');
       await db.execute('SOURCE q5_dogs.sql');
-      await db.execute()
+      await db.execute('SOURCE q5_walks.sql');
     }
   }
-})
+})();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
