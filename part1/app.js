@@ -79,7 +79,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
 app.get('/api/walkers/summary', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT Users.username as "walker_username", WalkRatings as "total_ratings",
+      SELECT Users.username as "walker_username", COUNT() as "total_ratings",
       `);
   } catch(err) {
     res.status(500).json({ message: "request error" });
