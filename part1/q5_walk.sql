@@ -15,3 +15,30 @@ VALUES (
     "Beachside Ave",
     "accepted"
 );
+
+INSERT INTO WalkRequests (dog_id, request_time, duration, location, status)
+VALUES (
+    (SELECT dog_id FROM Dogs WHERE name = "Min"),
+    "2025-06-10 09:30:00",
+    45,
+    "Beachside Ave",
+    "accepted"
+);
+
+INSERT INTO WalkRequests (dog_id, request_time, duration, location, status)
+VALUES (
+    (SELECT dog_id FROM Dogs WHERE name = "Bella"),
+    "2025-06-10 09:30:00",
+    45,
+    "Beachside Ave",
+    "accepted"
+);
+
+INSERT INTO WalkRequests (dog_id, request_time, duration, location, status)
+VALUES (
+    (SELECT dog_id FROM Dogs WHERE name = "Bella"),
+    "2025-06-10 09:30:00",
+    45,
+    "Beachside Ave",
+    "accepted"
+);
