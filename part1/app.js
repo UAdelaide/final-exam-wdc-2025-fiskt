@@ -41,7 +41,7 @@ let db;
       database: 'DogWalkService'
     });
 
-    await db.execute
+    await db.execute('SOURCE dogwalks.sql')
   }
 })
 
