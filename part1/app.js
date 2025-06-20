@@ -76,7 +76,11 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
   }
 });
 
-app.get()
+app.get('/api/walkers/summary', async (req, res, next) => {
+  try {
+
+  } catch 
+});
 
 app.get()
 
