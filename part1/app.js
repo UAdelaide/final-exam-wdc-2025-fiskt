@@ -42,7 +42,9 @@ app.use(function(err, req, res, next) {
 
 app.get('/api/dogs', async (req, res, next) => {
   const [rows] = await db.query(
-    'SELECT Dogs.name, Dogs.size, Users.username FROM Dogs JOIN Users on Users.user_id = Dogs.owner_id'
+    'SELECT Dogs.name, Dogs.size, Users.username
+    FROM Dogs
+    JOIN Users on Users.user_id = Dogs.owner_id'
   );
 });
 
