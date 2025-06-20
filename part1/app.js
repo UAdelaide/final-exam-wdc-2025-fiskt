@@ -49,6 +49,8 @@ let db;
       await db.execute('SOURCE q5_dogs.sql');
       await db.execute('SOURCE q5_walks.sql');
     }
+  } catch(err) {
+    console.error('Error in setting up database');
   }
 })();
 
