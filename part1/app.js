@@ -31,7 +31,7 @@ let db;
       password: ''
     });
 
-    await connection.query('SOURCE dogwalks.sql');
+    await connection.query('CREATE DATABASE DogWalkService;');
     await connection.end();
 
     db = await mysql.createConnection({
