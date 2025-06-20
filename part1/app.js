@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var mysql = require('mysql2/promise');
+var fs = require('fs/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
