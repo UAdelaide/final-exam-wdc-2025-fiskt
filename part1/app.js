@@ -68,7 +68,9 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
       `);
     if (rows.length > 0) {
       res.status(200).json(rows);
-    } else 
+    } else {
+      res.status(500).json({ message: "" })
+    }
   } catch(err) {
     res.status(500).json({ message: "request error" });
   }
