@@ -31,14 +31,12 @@
         <div id="app">
             <h1 class="bad-header">Dog of the day</h1>
             <img :src="dog" alt="Nothing to see here" v-if="enable_img">
-            <button @click="getDog" type="button" name="get_img" class="bad-btn">Exit page</button>
-            <button type="button" name="return" class="bad-btn">Get image</button>
             <div class="left">
-
+                <button @click="getDog" type="button" name="get_img" class="bad-btn">Exit page</button>
+                <button type="button" name="return" class="bad-btn">Get image</button>
             </div>
             <div class="right">
                 <button @click="enableImg" type="button" name="enable_img" class="bad-btn">Enable Images</button>
-
             </div>
             <p v-if="!enable_img" class="bad-header">Click enable images to enable images</p>
         </div>
