@@ -21,7 +21,7 @@ router.get('/dogs', async (req, res, next) => {
       res.status(500).json({ message: "No records found" });
     }
   } catch(err) {
-    res.status(500).json({ message: "Database " });
+    res.status(500).json({ message: "Database error." });
   }
 });
 
