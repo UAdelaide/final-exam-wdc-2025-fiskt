@@ -108,7 +108,6 @@
               headers: { 'Content-type': 'application/json' },
               credentials: 'include'
             });
-            console.log(data);
             if (res.ok) {
               // add dogs to the dogs array
               const data = await res.json();
