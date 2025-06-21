@@ -28,6 +28,10 @@ app.post('/login-user', (req, res) => {
     }
 });
 
+app.post('/logout-user', (req, res) => {
+    const { user_id, username, role}
+})
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
