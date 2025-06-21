@@ -97,7 +97,11 @@
 
         async function selectDogs() {
           try {
-            const res = await fetch('/select-dogs')
+            const res = await fetch('/select-dogs');
+            const data = await res.json();
+            if (res.ok) {
+              
+            }
           }
         }
 
