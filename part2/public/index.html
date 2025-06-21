@@ -93,11 +93,34 @@
           }
         }
 
+        const dogs = ref([]);
+
+        async function fetchDogs() {
+          try {
+            const res = await fetch('/api/dogs');
+            const data = await res.json();
+
+            // Fetch a random dog photo for each dog
+            const dogsWithPhotos = await Promise.all(data.map(async dog => {
+              const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
+              const photoData = await photoRes.json();
+              return {
+                ...dog,
+                photo_url: photoData.message
+              };
+            }));
+
+            dogs.value = dogsWithPhotos;
+          } catch (err) {
+            console.error('Error fetching dogs:', err);
+          }
+        }
+
         return {
           loginForm,
           login,
           loadDogs,
-          
+
         };
       }
     }).mount('#app');
