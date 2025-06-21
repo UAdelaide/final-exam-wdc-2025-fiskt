@@ -83,13 +83,13 @@
           }
         }
 
+        const dogs = ref([]);
+
         async function loadDogs() {
           const res = await fetch('https://dog.ceo/api/breeds/image/random');
           const data = await res.json();
           return data.message;
         }
-
-        const dogs = ref([]);
 
         async function loadDogsTable() {
           try {
