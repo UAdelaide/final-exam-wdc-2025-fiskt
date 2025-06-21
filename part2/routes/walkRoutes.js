@@ -60,7 +60,8 @@ router.post('/:id/apply', async (req, res) => {
 });
 
 router.get('/select-dogs', async (req, res) => {
-  const [result] = await db.query('SELECT * FROM Dogs WHERE owner_id = ?', [])
+  const [result] = await db.query('SELECT * FROM Dogs WHERE owner_id = ?', [req.session.user.user_id]);
+  
 })
 
 module.exports = router;
