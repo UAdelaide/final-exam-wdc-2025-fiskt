@@ -24,9 +24,9 @@ app.post('/login-user', (req, res) => {
     };
 
     if (req.session.user) {
-        res.status(200);
+        res.status(200).send("Session created.");
     } else {
-        res.status(500);
+        res.status(500).send("Failed to make session");
     }
 });
 
