@@ -68,6 +68,6 @@ router.get('/logout', (req, res) => {
   } catch(err) {
     console.error(err);
   }
-};
+});
 
 module.exports = router;
