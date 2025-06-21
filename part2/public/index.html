@@ -74,7 +74,7 @@
             const res = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ username: loginForm.username, password: loginForm.password })
+              body: JSON.stringify({ username: loginForm.value.username, password: loginForm.value.password })
             });
             console.log(loginForm.value.username, loginForm.value.password);
             const data = await res.json();
