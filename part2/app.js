@@ -29,7 +29,9 @@ app.post('/login-user', (req, res) => {
 });
 
 app.post('/logout-user', (req, res) => {
-    
+    req.session.destroy((err) => {
+        if (err )
+    })
 })
 
 // Middleware
