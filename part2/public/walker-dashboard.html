@@ -55,10 +55,6 @@
           user.value = data.user_id;
         }
 
-        onMounted(() => {
-          getCurrentUser();
-        })
-
         async function logout() {
           try {
             // get request to api/users/logout
@@ -84,6 +80,7 @@
 
         async function applyToWalk(requestId) {
           try {
+            await
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
