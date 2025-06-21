@@ -48,8 +48,17 @@
         const error = ref('');
         const user = 3;
 
+        async function logout() {
+          try {
+            const res = await fetch('api/users/logout');
+            if (res.ok) {
+              window.location = '/';
+            }
+          } catch(err) {
+            console.error(err);
+          }
+        }
 
-      
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
@@ -87,7 +96,8 @@
           walks,
           message,
           error,
-          applyToWalk
+          applyToWalk,
+          logout
         };
       }
     }).mount('#app');
