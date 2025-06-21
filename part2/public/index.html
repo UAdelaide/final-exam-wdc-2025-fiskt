@@ -56,19 +56,6 @@
           password: ''
         });
 
-        async function sessionLogin(uid, username, role) {
-          try {
-            const res = await fetch('/login-user', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ user_id: uid, username: username, role: role }),
-              credentials: 'include'
-            })
-          } catch(err) {
-            console.error(err);
-          }
-        }
-
         async function login() {
           try {
             const res = await fetch('/api/users/login', {
