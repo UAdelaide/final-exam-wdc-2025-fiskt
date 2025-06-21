@@ -71,6 +71,7 @@ router.get('/select-dogs', async (req, res) => {
 
 router.get('/dogs', async (req, res, next) => {
   try {
+    // get list of dogs from the database
     const [rows] = await db.query(`
       SELECT dog_id, name, size, owner_id
       FROM Dogs
