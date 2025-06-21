@@ -50,6 +50,7 @@
 
         async function logout() {
           try {
+            // get request to api/users/logout
             const res = await fetch('api/users/logout');
             if (res.ok) {
               window.location = '/';
