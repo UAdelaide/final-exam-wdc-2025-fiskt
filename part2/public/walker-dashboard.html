@@ -52,7 +52,7 @@
         async function getCurrentUser() {
           const res = await fetch('/api/users/me');
           const data = await res.json();
-          user = data.user_id;
+          user.value = data.user_id;
         }
 
         onMounted(() => {
