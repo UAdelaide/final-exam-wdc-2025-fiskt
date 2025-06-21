@@ -83,7 +83,7 @@
         async function logout() {
           const res = await fetch('api/users/logout');
           if (res.ok) {
-            window.location.href = '/';
+            window.location = '/';
           }
         }
 
@@ -131,7 +131,8 @@
           walks,
           message,
           error,
-          submitWalkRequest
+          submitWalkRequest,
+          logout
         };
       }
     }).mount('#app');
