@@ -96,7 +96,9 @@
         }
 
         async function selectDogs() {
-          
+          try {
+            const res = await fetch('/select-dogs')
+          }
         }
 
         async function loadWalks() {
