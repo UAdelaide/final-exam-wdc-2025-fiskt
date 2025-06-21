@@ -71,7 +71,7 @@ app.use(function(err, req, res, next) {
 app.get('/api/dogs', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT Dogs.name as "dog_name", Dogs.size, Users.username as "owner_username"
+      SELECT Dogs.name AS "dog_name", Dogs.size, Users.username AS "owner_username"
       FROM Dogs
       JOIN Users on Users.user_id = Dogs.owner_id
       `);
@@ -88,8 +88,8 @@ app.get('/api/dogs', async (req, res, next) => {
 app.get('/api/walkrequests/open', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT WR.request_id, Dogs.name as "dog_name", WR.requested_time, WR.duration_minutes, WR.location, Users.username
-      FROM WalkRequests as WR
+      SELECT WR.request_id, Dogs.name AS "dog_name", WR.requested_time, WR.duration_minutes, WR.location, Users.username
+      FROM WalkRequests AS WR
       JOIN Dogs on Dogs.dog_id = WR.dog_id
       JOIN Users on Users.user_id = Dogs.owner_id
       WHERE WR.status = "open"
@@ -107,7 +107,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
 app.get('/api/walkers/summary', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT Users.username as "walker_username", COUNT(WRs.rating) as "total_ratings", AVG(WRs.rating) as "average_rating", COUNT(WRs.rating) as "completed_walks"
+      SELECT Users.username AS "walker_username", COUNT(WRs.rating) as "total_ratings", AVG(WRs.rating) as "average_rating", COUNT(WRs.rating) as "completed_walks"
       FROM WalkRatings as WRs
       JOIN Users on Users.user_id = WRs.walker_id
       GROUP BY Users.user_id
