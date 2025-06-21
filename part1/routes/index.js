@@ -58,7 +58,7 @@ router.get('/walkers/summary', async (req, res, next) => {
       res.status(500).json({ message: "No records found" });
     }
   } catch(err) {
-    res.status(500).json({ message: "request error" });
+    res.status(500).json({ message: err });
   }
 });
 
