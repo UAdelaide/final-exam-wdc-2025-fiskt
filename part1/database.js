@@ -15,14 +15,17 @@ let pool;
     await connection.end();
 
     // Now connect to the created database
-    db = await mysql.createConnection({
+    pool = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '',
       database: 'DogWalkService'
     });
+
+    console.log("Created database");
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
 })();
 
+module.exports = {}
