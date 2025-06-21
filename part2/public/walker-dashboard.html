@@ -52,6 +52,7 @@
           const currentUserID = -1;
           const res = await fetch('/api/users/me');
           const data = await res.json();
+          currentUserID = data.userID
           return currentUserID;
         }
 
