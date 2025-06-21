@@ -81,7 +81,9 @@
         const error = ref('');
 
         async function logout() {
-          req
+          const res = await fetch('api/users/logout', {
+            
+          })
         }
 
         async function loadWalks() {
