@@ -113,7 +113,7 @@ app.get('/api/walkers/summary', async (req, res, next) => {
       GROUP BY Users.user_id
       `);
     if (rows.length > 0) {
-      res.status(200).json(200);
+      res.status(200).json(rows);
     } else {
       res.status(500).json({ message: "No records found" });
     }
