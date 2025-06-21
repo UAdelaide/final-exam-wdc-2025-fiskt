@@ -47,14 +47,12 @@
         const message = ref('');
         const error = ref('');
         // const user = 3;
-        const user = ref('');
 
         async function getCurrentUser() {
           const currentUserID = '';
           const res = await fetch('/api/users/me');
           const data = await res.json();
-
-          r
+          return currentUserID;
         }
 
         async function logout() {
