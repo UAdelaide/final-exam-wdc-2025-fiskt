@@ -100,7 +100,12 @@
             const res = await fetch('/api/walks/dogs');
             const data = await res.json();
 
-            pic_url = loadDogs();
+            const dogsData = await Promise.all(
+              data.map(async (dog) => {
+                const pic_url = await loadDogs();
+                return { ...dog, pic_url };
+              })
+            );
 
             dogs.value = dogsWithPhotos;
           } catch (err) {
