@@ -1,4 +1,3 @@
-const { pool } = require("../part2/models/db");
 
 let db;
 
@@ -27,4 +26,3 @@ let db;
   }
 })();
 
-module.exports = pool.promise;
