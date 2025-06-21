@@ -7,7 +7,7 @@
     <body>
         <div id="app">
             <h1 style="position: absolute; color: yellow; ">Dog of the day</h1>
-            <img :src="dog" alt="Nothing to see here" v-if="dog">
+            <img :src="dog" alt="Nothing to see here" v-if="enable_img">
             <button @click="getDog" type="button" name="get_img">Exit page</button>
             <button type="button" name="return">Get image</button>
             <button @click="enableImg" type="button" name="enable_img">Enable Images</button>
@@ -30,6 +30,8 @@
                             const res = await fetch('https://dog.ceo/api/breeds/image/random');
                             const data = await res.json();
                             if (res.ok && data.status == "success") dog.value = data.message;
+                        } else {
+                            alert("Enable images first");
                         }
                     }
 
