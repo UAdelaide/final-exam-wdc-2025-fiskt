@@ -51,7 +51,8 @@
 
         async function getCurrentUser() {
           const res = await fetch('/api/users/me');
-          user = await res.json()
+          const data = await res.json();
+          user = data.user_id;
         }
 
         async function logout() {
