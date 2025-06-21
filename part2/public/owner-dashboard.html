@@ -81,9 +81,11 @@
         const error = ref('');
 
         async function logout() {
-          const res = await fetch('api/users/logout');
-          if (res.ok) {
-            window.location = '/';
+          try {
+            const res = await fetch('api/users/logout');
+            if (res.ok) {
+              window.location = '/';
+            }
           }
         }
 
