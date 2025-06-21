@@ -20,7 +20,9 @@
                     const dog = ref('');
                     const enable_img = false;
 
-                    
+                    function enableImg() {
+                        !enableImg;
+                    }
 
                     async function getDog() {
                         if (enable_img) {
@@ -32,7 +34,8 @@
 
                     return {
                         dog,
-                        getDog
+                        getDog,
+                        enableImg
                     }
                 }
             }).mount('#app');
