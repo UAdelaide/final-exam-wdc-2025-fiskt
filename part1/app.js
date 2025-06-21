@@ -107,8 +107,8 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
 app.get('/api/walkers/summary', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT Users.username AS "walker_username", COUNT(WRs.rating) as "total_ratings", AVG(WRs.rating) as "average_rating", COUNT(WRs.rating) as "completed_walks"
-      FROM WalkRatings as WRs
+      SELECT Users.username AS "walker_username", COUNT(WRs.rating) AS "total_ratings", AVG(WRs.rating) AS "average_rating", COUNT(WRs.rating) AS "completed_walks"
+      FROM WalkRatings AS WRs
       JOIN Users on Users.user_id = WRs.walker_id
       GROUP BY Users.user_id
       `);
