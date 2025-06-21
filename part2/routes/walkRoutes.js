@@ -72,7 +72,7 @@ router.get('/select-dogs', async (req, res) => {
 router.get('/dogs', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
-      SELECT dog_id, size 
+      SELECT dog_id, name, size, owner_id
       FROM Dogs
       `);
     if (rows.length > 0) {
