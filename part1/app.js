@@ -95,7 +95,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
       WHERE WR.status = "open"
       `);
     if (rows.length > 0) {
-      res.status(200).json(rows);
+      res.json(rows);
     } else {
       res.status(500).json({ message: "No records found" });
     }
