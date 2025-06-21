@@ -49,10 +49,9 @@
         // const user = 3;
 
         async function getCurrentUser() {
-          const currentUserID = -1;
+          var currentUserID = -1;
           const res = await fetch('/api/users/me');
           const data = await res.json();
-          console.log(data.user_id);
           currentUserID = data.user_id;
           return currentUserID;
         }
@@ -83,7 +82,6 @@
         async function applyToWalk(requestId) {
           try {
             const curr = await getCurrentUser();
-            console.log(curr);
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
