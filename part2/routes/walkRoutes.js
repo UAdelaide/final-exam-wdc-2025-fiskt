@@ -59,6 +59,8 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-router.post('/selectDogs')
+router.post('/select-dogs', async (req, res) => {
+  const 
+})
 
 module.exports = router;
