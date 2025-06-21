@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-app.get('/api/dogs', async (req, res, next) => {
+router.get('/api/dogs', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
       SELECT Dogs.name AS "dog_name", Dogs.size, Users.username AS "owner_username"
@@ -24,7 +24,7 @@ app.get('/api/dogs', async (req, res, next) => {
   }
 });
 
-app.get('/api/walkrequests/open', async (req, res, next) => {
+router.get('/api/walkrequests/open', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
       SELECT WR.request_id, Dogs.name AS "dog_name", WR.requested_time, WR.duration_minutes, WR.location, Users.username
@@ -43,7 +43,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
   }
 });
 
-app.get('/api/walkers/summary', async (req, res, next) => {
+router.get('/api/walkers/summary', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
       SELECT Users.username AS "walker_username", COUNT(WRs.rating) AS "total_ratings", AVG(WRs.rating) AS "average_rating", COUNT(WRs.rating) AS "completed_walks"
