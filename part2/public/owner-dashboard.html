@@ -82,7 +82,9 @@
 
         async function logout() {
           const res = await fetch('api/users/logout');
-          
+          if (res.ok) {
+            window.location.href = '/';
+          }
         }
 
         async function loadWalks() {
