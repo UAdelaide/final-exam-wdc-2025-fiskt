@@ -18,6 +18,7 @@
             createApp({
                 setup() {
                     const dog = ref('');
+                    const enable_img = false;
 
                     async function getDog() {
                         const res = await fetch('https://dog.ceo/api/breeds/image/random');
