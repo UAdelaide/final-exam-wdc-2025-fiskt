@@ -98,6 +98,8 @@
           }
         }
 
+        const dogs = ref([]);
+
         async function selectDogs() {
           try {
             const res = await fetch('/select-dogs');
