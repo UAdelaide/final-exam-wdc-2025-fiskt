@@ -23,6 +23,7 @@
             <button @click="getDog" type="button" name="get_img" class="bad-btn">Exit page</button>
             <button type="button" name="return" class="bad-btn">Get image</button>
             <button @click="enableImg" type="button" name="enable_img" class="bad-btn">Enable Images</button>
+            
         </div>
 
         <script>
@@ -33,12 +34,7 @@
                     const enable_img = ref(false);
 
                     function enableImg() {
-                        if (enable_img.value == true) {
-                            enable_img.value = false;
-                        } else {
-                            enable_img.value = true;
-                        }
-                        alert("Images enabled: ", enable_img.value);
+                        enable_img.value = true;
                     }
 
                     async function getDog() {
