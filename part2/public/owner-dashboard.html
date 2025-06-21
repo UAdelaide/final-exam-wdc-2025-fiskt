@@ -110,7 +110,7 @@
             });
             if (res.ok) {
               // add dogs to the dogs array
-              dogs.value = await res.json();
+              dogs.value = data[0];
             }
           } catch(err) {
             console.error(err);
