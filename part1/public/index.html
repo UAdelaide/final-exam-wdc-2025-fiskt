@@ -17,10 +17,10 @@
     </head>
     <body>
         <div id="app">
-            <h1 style="position: absolute; color: yellow; ">Dog of the day</h1>
+            <h1 class="bad-header">Dog of the day</h1>
             <img :src="dog" alt="Nothing to see here" v-if="enable_img">
-            <button @click="getDog" type="button" name="get_img">Exit page</button>
-            <button type="button" name="return">Get image</button>
+            <button @click="getDog" type="button" name="get_img" class="bad-btn">Exit page</button>
+            <button type="button" name="return" class="bad-btn">Get image</button>
             <button @click="enableImg" type="button" name="enable_img">Enable Images</button>
         </div>
 
