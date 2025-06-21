@@ -18,7 +18,7 @@
             createApp({
                 setup() {
                     const dog = ref('');
-                    const enable_img = false;
+                    const enable_img = ref(false);
 
                     function enableImg() {
                         enable_img = !enable_img;
@@ -35,7 +35,8 @@
                     return {
                         dog,
                         getDog,
-                        enableImg
+                        enableImg,
+                        enable_img
                     }
                 }
             }).mount('#app');
