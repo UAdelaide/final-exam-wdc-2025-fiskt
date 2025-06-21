@@ -53,6 +53,7 @@
             // get request to api/users/logout
             const res = await fetch('api/users/logout');
             if (res.ok) {
+              // redirect back to the login screen if logged out
               window.location = '/';
             }
           } catch(err) {
