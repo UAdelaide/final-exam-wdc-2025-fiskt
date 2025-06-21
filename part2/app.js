@@ -34,10 +34,10 @@ app.post('/logout-user', (req, res) => {
             console.error(err);
             res.status(500).send('Error logging out');
         } else {
-            
+            res.send("Logged out");
         }
-    })
-})
+    });
+});
 
 // Middleware
 app.use(express.json());
