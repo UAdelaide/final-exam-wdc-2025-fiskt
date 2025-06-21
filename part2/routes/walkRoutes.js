@@ -60,11 +60,15 @@ router.post('/:id/apply', async (req, res) => {
 });
 
 router.get('/select-dogs', async (req, res) => {
-  const [result] = await db.query(`SELECT * FROM Dogs WHERE owner_id = ?`, [req.session.user.user_id]);
-  if (result.length > 0) {
-    res.status(200).json(result);
-  } else {
-    res.status(500).json({ message: "No records found." });
+  try {
+    const [result] = await db.query(`SELECT * FROM Dogs WHERE owner_id = ?`, [req.session.user.user_id]);
+    if (result.length > 0) {
+      res.status(200).json(result);
+    } else {
+      res.status(500).json({ message: "No records found." });
+    }
+  } catch(err) {
+    res.status(500).send("error");
   }
 });
 
