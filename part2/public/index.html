@@ -77,7 +77,7 @@
               body: JSON.stringify({ username: loginForm.value.username, password: loginForm.value.password })
             });
             const data = await res.json();
-            sessionLogin(data.user_id, data.username, data.role);
+            await sessionLogin(data.user_id, data.username, data.role);
             if (res.ok) {
               if (data.role === "owner") window.location.href = 'owner-dashboard.html';
               if (data.role === "walker") window.location.href = 'walker-dashboard.html';
