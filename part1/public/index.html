@@ -16,12 +16,12 @@
             const { createApp, ref } = Vue;
             createApp({
                 setup() {
-                    dog: ''
+                    const dog = ref('');
 
                     async function getDog() {
                         const res = await fetch('https://dog.ceo/api/breeds/image/random');
                         const data = res.json();
-                        if (res.ok) dog = data.message;
+                        if (res.ok) dog.value = data.message;
                     }
 
                     return {
