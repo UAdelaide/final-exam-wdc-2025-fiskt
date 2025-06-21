@@ -52,7 +52,7 @@
           // initialise the current user id
           var currentUserID = -1;
 
-          // fetch the user id from the 
+          // fetch the user id from /api/users/me
           const res = await fetch('/api/users/me');
           const data = await res.json();
           currentUserID = data.user_id;
