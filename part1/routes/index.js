@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-app.get('/api/dogs', async (req, res, next) => {
+router.get('/api/dogs', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
       SELECT Dogs.name as "dog_name", Dogs.size, Users.username as "owner_username"
@@ -23,7 +23,7 @@ app.get('/api/dogs', async (req, res, next) => {
   }
 });
 
-app.get('/api/walkrequests/open', async (req, res, next) => {
+router.get('/api/walkrequests/open', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
       SELECT WR.request_id, Dogs.name as "dog_name", WR.requested_time, WR.duration_minutes, WR.location, Users.username
@@ -42,7 +42,7 @@ app.get('/api/walkrequests/open', async (req, res, next) => {
   }
 });
 
-app.get('/api/walkers/summary', async (req, res, next) => {
+router.get('/api/walkers/summary', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
       SELECT Users.username as "walker_username", COUNT(WRs.rating) as "total_ratings", AVG(WRs.rating) as "average_rating", COUNT(WRs.rating) as "completed_walks"
