@@ -1,3 +1,6 @@
 const mysql = require('mysql2/promise');
 
-const poll = 
+const poll = mysql.createPool({
+    host: 'localhost',
+    user
+})
