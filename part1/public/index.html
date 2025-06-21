@@ -21,7 +21,11 @@
                     const enable_img = ref(false);
 
                     function enableImg() {
-                        if ()
+                        if (enable_img.value == true) {
+                            enable_img.value = false;
+                        } else {
+                            enable_img.value = true;
+                        }
                         alert("Images enabled: ", enable_img);
                     }
 
