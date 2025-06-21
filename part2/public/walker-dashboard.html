@@ -55,6 +55,10 @@
           user = data.user_id;
         }
 
+        onMounted(() => {
+          getCurrentUser();
+        })
+
         async function logout() {
           try {
             // get request to api/users/logout
