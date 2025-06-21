@@ -64,6 +64,7 @@ router.get('/select-dogs', async (req, res) => {
   if (result.length > 0) {
     res.status(200).json(result);
   }
+  res.status(500).json
 })
 
 module.exports = router;
