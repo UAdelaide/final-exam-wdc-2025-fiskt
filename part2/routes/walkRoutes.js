@@ -75,11 +75,7 @@ router.get('/dogs', async (req, res, next) => {
       SELECT dog_id, name, size, owner_id
       FROM Dogs
       `);
-    if (rows.length > 0) {
-      res.status(200).json(rows);
-    } else {
-      res.status(500).json({ message: "No records found." });
-    }
+    res.json(rows);
   } catch(err) {
     res.status(500).json({ message: "Database error." });
   }
