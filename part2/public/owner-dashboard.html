@@ -105,7 +105,8 @@
             // get request to api/walks/select-dogs
             const res = await fetch('api/walks/select-dogs', {
               method: 'POST',
-              headers: { }
+              headers: {( 'Content-type', 'application/json' )},
+              
             });
             console.log(data);
             if (res.ok) {
