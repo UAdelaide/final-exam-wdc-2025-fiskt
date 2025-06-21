@@ -28,4 +28,6 @@ let pool;
   }
 })();
 
-module.exports = {}
+module.exports = {
+    getPool: () => pool
+};
