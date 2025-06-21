@@ -20,7 +20,9 @@
 
                     async function getDog() {
                         const res = await fetch('https://dog.ceo/api/breeds/image/random');
-                        
+                        const data = res.json();
+                        if (res.ok) dog = data
+
                     }
                 }
             })
