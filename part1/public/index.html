@@ -20,10 +20,14 @@
                     const dog = ref('');
                     const enable_img = false;
 
+                    
+
                     async function getDog() {
-                        const res = await fetch('https://dog.ceo/api/breeds/image/random');
-                        const data = await res.json();
-                        if (res.ok && data.status == "success") dog.value = data.message;
+                        if (enable_img) {
+                            const res = await fetch('https://dog.ceo/api/breeds/image/random');
+                            const data = await res.json();
+                            if (res.ok && data.status == "success") dog.value = data.message;
+                        }
                     }
 
                     return {
