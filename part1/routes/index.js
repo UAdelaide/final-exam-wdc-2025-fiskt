@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/api/dogs', async (req, res, next) => {
+router.get('/dogs', async (req, res, next) => {
   try {
     const [rows] = await db.query(`
       SELECT Dogs.name AS "dog_name", Dogs.size, Users.username AS "owner_username"
