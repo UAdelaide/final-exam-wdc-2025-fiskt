@@ -49,7 +49,7 @@
         // const user = 3;
 
         async function getCurrentUser() {
-          const currentUserID = '';
+          const currentUserID = -1;
           const res = await fetch('/api/users/me');
           const data = await res.json();
           return currentUserID;
