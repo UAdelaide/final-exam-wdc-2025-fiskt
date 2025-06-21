@@ -24,7 +24,7 @@
             <label class="form-label">Select Your Dog</label>
             <select v-model="form.dog_id" class="form-select" required>
               <option disabled value="">-- Choose a dog --</option>
-              <option v-for="dog in dogs" :value="dog.dog_id">{{ dog.name }}</option>
+              <option v-for="d in dogs" :value="d.dog_id">{{ d.name }}</option>
             </select>
           </div>
           <div class="mb-3">
@@ -106,7 +106,7 @@
             const res = await fetch('api/walks/select-dogs');
             const data = await res.json();
             if (res.ok) {
-              // 
+              // add dogs to the dogs array
             }
           }
         }
