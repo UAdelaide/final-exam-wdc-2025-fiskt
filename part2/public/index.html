@@ -66,6 +66,8 @@
               body: JSON.stringify({ username: loginForm.value.username, password: loginForm.value.password })
             });
             const data = await res.json();
+
+            // check the users role and send them to the correct page
             if (res.ok) {
               if (data.user.role === "owner") window.location.href = 'owner-dashboard.html';
               if (data.user.role === "walker") window.location.href = 'walker-dashboard.html';
