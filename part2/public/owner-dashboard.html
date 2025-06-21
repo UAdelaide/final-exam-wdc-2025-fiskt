@@ -110,12 +110,15 @@
             });
             if (res.ok) {
               // add dogs to the dogs array
+              const data = await res.json();
               dogs.value = data[0];
             }
           } catch(err) {
             console.error(err);
           }
         }
+
+        onMounted(() =>)
 
         async function loadWalks() {
           try {
@@ -154,7 +157,6 @@
 
         onMounted(() => {
           loadWalks();
-          selectDogs();
         });
 
         return {
