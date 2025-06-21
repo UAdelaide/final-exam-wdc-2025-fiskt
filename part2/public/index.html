@@ -93,6 +93,7 @@
 
         async function loadDogsTable() {
           try {
+            // get the dog data from 
             const res = await fetch('/api/walks/dogs');
             const data = await res.json();
 
