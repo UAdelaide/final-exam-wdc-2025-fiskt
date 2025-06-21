@@ -97,8 +97,9 @@
             const res = await fetch('/api/walks/dogs');
             const data = await res.json();
 
-            // add the img url 
+            // add the img url
             const dogsData = await Promise.all(data.map(async (dog) => {
+                // ca;; loadDogs to fetch the image url from the API
                 const pic_url = await loadDogs();
                 return { ...dog, pic_url };
               })
