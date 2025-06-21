@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/dogs', async (req, res, next) => {
   try {
-    const [rows] = await pool.query(`
+    const [rows] = await db.query(`
       SELECT Dogs.name AS "dog_name", Dogs.size, Users.username AS "owner_username"
       FROM Dogs
       JOIN Users on Users.user_id = Dogs.owner_id
@@ -27,7 +27,7 @@ router.get('/dogs', async (req, res, next) => {
 
 router.get('/walkrequests/open', async (req, res, next) => {
   try {
-    const [rows] = await pool.query(`
+    const [rows] = await db.query(`
       SELECT WR.request_id, Dogs.name AS "dog_name", WR.requested_time, WR.duration_minutes, WR.location, Users.username
       FROM WalkRequests AS WR
       JOIN Dogs on Dogs.dog_id = WR.dog_id
@@ -46,7 +46,7 @@ router.get('/walkrequests/open', async (req, res, next) => {
 
 router.get('/walkers/summary', async (req, res, next) => {
   try {
-    const [rows] = await pool.query(`
+    const [rows] = await db.query(`
       SELECT Users.username AS "walker_username", COUNT(WRs.rating) AS "total_ratings", AVG(WRs.rating) AS "average_rating", COUNT(WRs.rating) AS "completed_walks"
       FROM WalkRatings AS WRs
       JOIN Users on Users.user_id = WRs.walker_id

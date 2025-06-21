@@ -1,5 +1,5 @@
 const mysql = require('mysql2/promise');
-let pool;
+let db;
 
 (async () => {
   try {
@@ -15,7 +15,7 @@ let pool;
     await connection.end();
 
     // Now connect to the created database
-    pool = await mysql.createConnection({
+    db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '',
@@ -29,5 +29,5 @@ let pool;
 })();
 
 module.exports = {
-    getPool: () => pool
+    getDB: () => db
 };
