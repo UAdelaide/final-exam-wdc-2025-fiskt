@@ -76,7 +76,7 @@
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ username: loginForm.username, password: loginForm.password })
             });
-            console.log(loginForm.username, loginForm.password);
+            console.log(loginForm.value.username, loginForm.value.password);
             const data = await res.json();
             sessionLogin(data.user_id, data.username, data.role);
             if (res.ok) {
