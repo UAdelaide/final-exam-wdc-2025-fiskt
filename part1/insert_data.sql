@@ -3,3 +3,6 @@ INSERT INTO Users (username, email, password_hash, role) VALUES ("bobwalker", "b
 INSERT INTO Users (username, email, password_hash, role) VALUES ("carol123", "carol@example.com", "hashed789", "owner");
 INSERT INTO Users (username, email, password_hash, role) VALUES ("david", "david@example.com", "hashed100", "walker");
 INSERT INTO Users (username, email, password_hash, role) VALUES ("charlie", "charlie@example.com", "hashed203", "owner");
+
+INSERT INTO Users (username, email, password_hash, role)
+VALUES
