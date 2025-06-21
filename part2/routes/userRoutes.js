@@ -60,10 +60,9 @@ router.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       res.status(500).send('Error logging out.');
-    } else {
-      res.
     }
-  })
+    res.status(200).send('Logged out.');
+  });
 });
 
 module.exports = router;
