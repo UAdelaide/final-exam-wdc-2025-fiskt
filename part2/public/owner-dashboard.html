@@ -105,6 +105,7 @@
             // get request to api/walks/select-dogs
             const res = await fetch('api/walks/select-dogs');
             const data = await res.json();
+            console.log(data);
             if (res.ok) {
               // add dogs to the dogs array
               dogs.value = data;
