@@ -50,10 +50,10 @@
         const user = ref('');
 
         async function getCurrentUser() {
-          const currentUserID;
+          const currentUserID = '';
           const res = await fetch('/api/users/me');
           const data = await res.json();
-          user.value = data.user_id;
+
           r
         }
 
