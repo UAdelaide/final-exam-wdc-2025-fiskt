@@ -69,4 +69,21 @@ router.get('/select-dogs', async (req, res) => {
   }
 });
 
+router.get('/dogs', async (req, res, next) => {
+  try {
+    const [rows] = await db.query(`
+      SELECT Dogs.name AS "dog_name", Dogs.size, Users.username AS "owner_username"
+      FROM Dogs
+      JOIN Users on Users.user_id = Dogs.owner_id
+      `);
+    if (rows.length > 0) {
+      res.status(200).json(rows);
+    } else {
+      res.status(500).json({ message: "No records found." });
+    }
+  } catch(err) {
+    res.status(500).json({ message: "Database error." });
+  }
+});
+
 module.exports = router;
