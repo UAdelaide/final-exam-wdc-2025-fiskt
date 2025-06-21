@@ -103,7 +103,7 @@
         async function selectDogs() {
           try {
             // get request to api/walks/select-dogs
-            const res = await fetch('api/walks/select-dogs');
+            const res = await fetch('/api/walks/select-dogs');
             if (res.ok) {
               // add dogs to the dogs array
               const data = await res.json();
