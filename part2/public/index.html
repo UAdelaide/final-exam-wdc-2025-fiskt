@@ -79,12 +79,12 @@
 
         async function loadDogs() {
           if (enable_img.value == true) {
-                  const res = await fetch('https://dog.ceo/api/breeds/image/random');
-                  const data = await res.json();
-                  if (res.ok && data.status == "success") dog.value = data.message;
-              } else {
-                  alert("Enable images first");
-              }
+              const res = await fetch('https://dog.ceo/api/breeds/image/random');
+              const data = await res.json();
+              if (res.ok && data.status == "success") dog.value = data.message;
+          } else {
+              alert("Enable images first");
+          }
         }
 
         return {
