@@ -18,7 +18,7 @@ router.get('/dogs', async (req, res, next) => {
     if (rows.length > 0) {
       res.status(200).json(rows);
     } else {
-      res.status(500).json({ message: "No records found" });
+      res.status(500).json({ message: "No records found." });
     }
   } catch(err) {
     res.status(500).json({ message: "Database error." });
@@ -37,10 +37,10 @@ router.get('/walkrequests/open', async (req, res, next) => {
     if (rows.length > 0) {
       res.json(rows);
     } else {
-      res.status(500).json({ message: "No records found" });
+      res.status(500).json({ message: "No records found." });
     }
   } catch(err) {
-    res.status(500).json({ message: err });
+    res.status(500).json({ message: "Datbase error." });
   }
 });
 
@@ -55,10 +55,10 @@ router.get('/walkers/summary', async (req, res, next) => {
     if (rows.length > 0) {
       res.status(200).json(rows);
     } else {
-      res.status(500).json({ message: "No records found" });
+      res.status(500).json({ message: "No records found." });
     }
   } catch(err) {
-    res.status(500).json({ message: err });
+    res.status(500).json({ message: "Database error." });
   }
 });
 
