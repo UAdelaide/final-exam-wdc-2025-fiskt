@@ -7,8 +7,8 @@
     <body>
         <div id="app">
             <h1 style="position: absolute; color: yellow; ">Dog of the day</h1>
-            <img v-bind:src="dog" alt="" v-model="dog_pic">
-            <button type="button" name="get_img">Exit page</button>
+            <img v-bind:src="dog" alt="A picture of a park" v-model="dog_pic">
+            <button @click type="button" name="get_img">Exit page</button>
             <button type="button" name="return">Get image</button>
         </div>
 
@@ -22,7 +22,6 @@
                         const res = await fetch('https://dog.ceo/api/breeds/image/random');
                         const data = res.json();
                         if (res.ok) dog = data.message;
-
                     }
                 }
             })
